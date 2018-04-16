@@ -39,7 +39,8 @@ function! s:PerldocView()
 
   call s:SetKeyMaps()
 
-  au BufHidden <buffer> call let <SID>buf_nr = -1
+  " au BufHidden <buffer> call let <SID>buf_nr = -1
+  au BufHidden <buffer> let s:buf_nr = -1
 endfunction
 
 function! s:SetKeyMaps()
