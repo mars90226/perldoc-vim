@@ -13,11 +13,11 @@ function! s:PerldocView()
 
   let split_modifier = get(g:, 'perldoc_split_modifier', '')
   if !bufexists(s:buf_nr)
-    exe 'leftabove ' . split_modifier . 'new'
+    exe 'rightbelow ' . split_modifier . 'new'
     file `="[Perldoc]"`
     let s:buf_nr = bufnr('%')
   elseif bufwinnr(s:buf_nr) == -1
-    exe 'leftabove ' . split_modifier . 'split'
+    exe 'rightbelow ' . split_modifier . 'split'
     execute s:buf_nr . 'buffer'
     delete _
   elseif bufwinnr(s:buf_nr) != bufwinnr('%')
