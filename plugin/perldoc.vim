@@ -34,6 +34,7 @@ function! s:PerldocView()
   setlocal modifiable
   setlocal nocursorline
   setlocal nocursorcolumn
+  setlocal norelativenumber
   setlocal iskeyword+=:
   setlocal iskeyword-=-
 
@@ -41,6 +42,7 @@ function! s:PerldocView()
 
   " au BufHidden <buffer> call let <SID>buf_nr = -1
   au BufHidden <buffer> let s:buf_nr = -1
+  wincmd _
 endfunction
 
 function! s:SetKeyMaps()
