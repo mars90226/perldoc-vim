@@ -40,8 +40,10 @@ function! s:PerldocView()
 
   call s:SetKeyMaps()
 
-  " au BufHidden <buffer> call let <SID>buf_nr = -1
-  au BufHidden <buffer> let s:buf_nr = -1
+  augroup Perldoc
+    autocmd!
+    autocmd BufHidden <buffer> let s:buf_nr = -1
+  augroup END
   wincmd _
 endfunction
 
